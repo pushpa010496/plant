@@ -1,0 +1,114 @@
+@extends('../layouts/app')
+@section('style')
+ <style>
+#article-list .article-list{
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+#article-list img {
+  display: block;
+  position: relative;
+  transition: all 0.4s ease-in;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*#article-list img:hover {transform: scale(1) rotate(0deg) translateX(0px) translateY(-40px);}*/
+
+#article-list h2 {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  }
+
+#article-list h2 a{color: #1c83c1;font-size: 16px; font-weight: bold; line-height: 20px;}
+
+#article-list .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color:rgba(225,225,225,.9);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .6s ease;
+}
+
+#article-list .article-disc:hover .overlay {
+  height: 100%;
+  color: #fff !important;
+}
+
+#article-list .text { 
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+ </style>
+@endsection
+@section('content')
+ <!-- // Profile Body -->
+     <div role="main" class="bg-white">    
+      
+      <!-- // Press Releases -->  
+      <div class="container-fluid">
+        <div class="container">
+          <div class="text-center pt-2">
+            <h2 class="main-title"><span><a href="#" class="text-blue">Articles</a></span></h2>
+          </div>
+        </div>  
+
+        <div class="container pb-3">
+          <div class="row">
+            <div class="col-lg-12 mb-4">
+              <p>We provide business technology, Automation Industry Articles in this section. Our vast collection of automation articles focus mainly on new technology in industrial automation. Our automation industry articles provide information based on latest updates. Industrial Automation Articles help to stay updated with recent news.</p>
+            </div>              
+          </div>
+          <div class="row">
+
+            <!-- <div class="col-lg-12">
+              <div class="row">
+                @foreach($article as $articles)
+                <div class="col-lg-3 text-center mb-4">
+                  <a href="{{ 'articles/'.$articles->article_url }}"><img class="img-fluid div-scal" src="<?php echo config('app.url'); ?>article/<?php //echo $articles->small_image;?>" alt=""></a>
+                </div> 
+                @endforeach             
+              </div>            
+            </div> -->
+
+            <div class="col-lg-12 mb-4">
+              <div class="row" id="article-list">  
+                @foreach($article as $articles)
+                <div class="col-lg-3 mb-4 text-center">
+                  <div class="article-list article-disc div-shadow">
+                    <a href="{{ 'articles/'.$articles->article_url }}"><img class="img-fluid div-scal" src="<?php echo config('app.url'); ?>article/<?php echo $articles->small_image;?>" alt=""></a>
+                    <div class="overlay">
+                      <div class="text">   
+                         <h2 class="pb-1"><a href="{{ 'articles/'.$articles->article_url }}">{{ $articles->article_title }}</a></h2>                          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                @endforeach                  
+              </div>        
+            </div>
+
+        </div>
+        </div>
+        <!-- Press Releases // -->        
+      </div>
+    </div>
+      <!-- Profile Body // -->
+    </div>
+@endsection
+@section('scripts')   
+@endsection

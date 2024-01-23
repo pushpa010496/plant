@@ -1,0 +1,44 @@
+User-agent: *
+Allow: /
+
+Disallow:   /list-reports/
+Disallow:   /listnews/
+Disallow:   /listpressreleases/
+Disallow:   /listenewsletters/
+Disallow:   /newswires/
+Disallow:   /viewprnewswire/
+Disallow:   /prnews/
+Disallow:   /viewbussinesswire/
+Disallow:   /bwnews/
+Disallow:   /viewglobalnewswire/
+Disallow:   /newsvoir/
+Disallow:   /viewglobal-reports/
+Disallow:   /global-reports/
+Disallow:   /events/month/
+Disallow:   /slider/
+Disallow:   /gwnews/
+Disallow:   /banner/
+Disallow:   /track-featured/
+Disallow:   /edm/
+Disallow:   /testproducts/
+Disallow:   /public/
+Disallow:   /http://track.plantautomation-technology.com
+
+
+Sitemap:  https://www.plantautomation-technology.com/sitemap.xml
+          https://www.plantautomation-technology.com/category/sitemap.xml
+          https://www.plantautomation-technology.com/products/sitemap.xml
+          https://www.plantautomation-technology.com/pat/sitemap.xml
+          https://www.plantautomation-technology.com/pat1/sitemap.xml
+          https://www.plantautomation-technology.com/pat2/sitemap.xml
+          https://www.plantautomation-technology.com/category-suppliers/sitemap.xml
+          https://www.plantautomation-technology.com/projects/sitemap.xml
+          https://www.plantautomation-technology.com/tenders/sitemap.xml
+          https://www.plantautomation-technology.com/articles/sitemap.xml
+          https://www.plantautomation-technology.com/whitepapers/sitemap.xml
+          https://www.plantautomation-technology.com/video/sitemap.xml
+          https://www.plantautomation-technology.com/interviews/sitemap.xml
+          https://www.plantautomation-technology.com/news/sitemap.xml
+          https://www.plantautomation-technology.com/pressreleases/sitemap.xml
+          https://www.plantautomation-technology.com/events/sitemap.xml
+          https://www.plantautomation-technology.com/suppliers/sitemap.xml

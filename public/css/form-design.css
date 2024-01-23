@@ -1,0 +1,109 @@
+/* FORM DESIGN 
+===============*/
+.form-container {
+  padding:30px 70px;
+  border-radius:10px;
+  background-image: url("../img/form-bg-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-box-shadow: 2px 2px 5px 3px rgba(0,0,0,.4);
+  box-shadow: 2px 2px 5px 3px rgba(0,0,0,.4);
+}
+.form-title{
+  color: #eee;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size:25px;
+  margin-bottom:30px;
+}
+.form-container .req-input{
+  width:100% !important;
+  border-radius:0px !important;
+  margin:14px 0px;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.input-group-addon{
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  border-bottom: 1px solid #ccc !important;
+  }
+  .form-control + .input-group-addon:not(:first-child){border:0;}
+
+.form-container .btn.submit-form{
+  margin-top:15px;
+  background-color:transparent;
+  color:#fff;
+  font-size:16px !important;
+  border-radius:0px;
+  border:1px solid #fff;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.form-container .btn.submit-form:hover{
+  background-color: rgba(0,0,0,.3);
+  border:1px solid #FFF;
+  color:#fff;
+}
+
+.widget-search input[type=""], .contact-form input[type="text"], .contact-form textarea, .contact-form select, .respond input[type="text"], .contact-form input[type="password"], .contact-form input[type="date"], .contact-form input[type="datetime"], .contact-form input[type="tel"], .contact-form input[type="url"], #respond textarea, .email{  
+  border: 0px solid #fff !important;
+  border-bottom: 1px solid #ccc !important;
+  border-radius: 0px !important;
+  color: #aaa !important;;
+  display: block;
+  font-family: "Open Sans",sans-serif;
+  font-size: 13px;
+  outline: medium none;
+  padding: 7px 14px;
+  transition: all 0.4s ease-in-out 0s;
+  width: 100%;
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.widget-search input[type=""]:focus, .contact-form input[type="text"]:focus, .contact-form textarea:focus, .contact-form select:focus, .respond input[type="text"]:focus, .contact-form input[type="password"]:focus, .contact-form input[type="date"]:focus, .contact-form input[type="datetime"]:focus, .contact-form input[type="tel"]:focus, .contact-form input[type="url"]:focus, #respond textarea:focus, .email:focus{border-color: #fff; box-shadow: 0 0 3px #fff;color: #fff !important;}
+.form-container *:placeholder-shown {color: #fff !important;}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ccc !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #ccc !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #ccc !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #ccc !important;
+}
+input::placeholder {
+  color: #ccc !important;
+}
+
+label{color: #ccc;}
+
+.form-container .req-input section{color: #888 !important;}
+.form-container .req-input option{color: #444 !important;}
+
+@media only screen and (max-width: 500px) {
+  .form-container {
+  padding:30px 10px;
+  }
+  #rc-imageselect, .g-recaptcha {
+    transform:scale(.8);-webkit-transform:scale(.8);transform-origin:0 0;-webkit-transform-origin:0 0;
+  }     
+}
+
+.error p{color:#fff !important;text-align:left; padding-top:2px;}

@@ -1,0 +1,1 @@
+[23-Jul-2018 11:45:32 UTC] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/plantautomationt/public_html/app/Article.php on line 6

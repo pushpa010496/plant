@@ -1,0 +1,48 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    #rewrite .php to slug
+    RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+    RewriteRule ^ /%1 [NC,L,R]
+    
+    # Redirect to custom error page for 403 errors
+    RewriteCond %{REQUEST_URI} /public/ [NC]
+    RewriteRule .* https://%{HTTP_HOST}/404-page [L]
+
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+    #end rewrite .php to slug
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Allow access to specific directories
+<LocationMatch "^/public/(css|js|images|flatepages|fonts|inc|vendor)/">
+    Order allow,deny
+    Allow from all
+</LocationMatch>
+
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
+
+<IfModule pagespeed_module>
+    ModPagespeed off
+</IfModule>

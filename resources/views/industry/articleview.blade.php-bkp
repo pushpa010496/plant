@@ -1,0 +1,62 @@
+@extends('../layouts/app')
+@section('style')
+ 
+@endsection
+@section('content')
+ <!-- // Profile Body -->
+     <div role="main" class="bg-white">    
+      
+      <!-- // Press Releases -->  
+      <div class="container-fluid">
+        <div class="container">
+          <div class="text-center pt-2">
+            <h2 class="main-title"><span>Articles</span></h2>
+          </div>
+        </div>  
+
+        <div class="container pb-3">
+          @foreach($article as $articles)
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <h1 class="display-5 pb-3 text-blue">{{ $articles->article_title }}</h1>
+              <img class="img-fluid div-shadow mb-2 mr-4 pull-left" src="<?php echo config('app.url'); ?>article/<?php echo $articles->article_image;?>" alt=""/>
+               <p>{!! $articles->article_description !!}</p>
+            </div>             
+          </div>
+          @endforeach 
+          
+        </div>
+        <!-- Press Releases // -->        
+      
+
+
+        <div class="container">
+          <div class="text-center pt-2">
+            <h2 class="main-title"><span><a href="#" class="text-blue">Related Articles</a></span></h2>
+          </div>
+
+          <div class="row" id="projects-list">  
+            @foreach($realted_articles as $related)
+            <div class="col-lg-3 mb-4 text-center">
+              <div class="projects-list projects-disc div-shadow">
+                <a href="{{ 'articles/'.$articles->article_url }}"><img class="img-fluid div-shadow" src="<?php echo config('app.url'); ?>article/<?php echo $related->article_image;?>" alt=""/></a>
+                <div class="overlay">
+                  <div class="text text-white">   
+                     <h2 class="pb-1"><a href="{{ 'articles/'.$articles->article_url }}">{{ $articles->article_title }}</a></h2>                          
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach                  
+          </div>
+        </div>
+       
+        
+    </div>
+      <!-- Profile Body // -->
+    </div>
+
+  </div>
+@endsection
+@section('scripts')   
+@endsection

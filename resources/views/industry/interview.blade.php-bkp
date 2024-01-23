@@ -1,0 +1,63 @@
+@extends('../layouts/app')
+@section('style')
+ 
+@endsection
+@section('content')
+ <!-- // Profile Body -->
+     <div role="main" class="bg-white">    
+      
+      <!-- // Press Releases -->  
+      <div class="container-fluid">
+        <div class="container">
+          <div class="text-center pt-2">
+            <h1 class="main-title"><span>Interviews</a></span></h1>
+          </div>
+        </div>  
+
+        <div class="container pb-3">
+          <div class="row">
+            <div class="col-lg-12 mb-3">
+              <p>We provide business technology, Automation Industry Articles in this section. Our vast collection of automation articles focus mainly on new technology in industrial automation. Our automation industry articles provide information based on latest updates. Industrial Automation Articles help to stay updated with recent news.</p>
+            </div>              
+          </div>
+          <div class="row">
+            <div class="col-lg-12 mb-3">
+              @foreach($interview as $interviews)
+              <div class="div-shadow p-3 mb-4">
+                <div class="row">
+                  <!-- <div class="col-lg-12">
+                  <h2 class="display-6 mb-2">
+                    <a href="{{ 'interviews/'.$interviews->interviews_url }}" class="text-blue">{{ $interviews->company }}</a>
+                  </h2>
+                  </div> -->
+                  <div class="col-lg-3 text-center">
+                    <img class="img-fluid" src="<?php echo config('app.url'); ?>interview/<?php echo $interviews->small_image;?>" alt="{{ $interviews->name }}">                    
+                    <h2 class="display-6 font-weight-bold mt-2">{{ $interviews->name }}</h2>
+                    <h3 class="small"><span class="font-weight-light font-italic text-sm">{{ $interviews->designation }}</span></h3>
+                    <h4 class="display-6 mt-2">
+                      <a href="{{ 'interviews/'.$interviews->interviews_url }}" class="text-blue">{{ $interviews->company }}</a>
+                    </h4>
+                  </div>
+
+                  <div class="col-lg-9">
+                    <h5 class="text-blue display-5">
+                      <a href="{{ 'interviews/'.$interviews->interviews_url }}">
+                        <span class="display-4 font-weight-bold text-capitalize pr-1">"</span>{{ $interviews->title }}<span class="display-4 font-weight-bold text-capitalize pl-1">"</span>
+                      </a>
+                    </h5>
+                    <p>{{ $interviews->description }}</p>                   
+                  </div>                  
+                </div>                 
+              </div>
+              @endforeach 
+            </div>
+        </div>
+        </div>
+        <!-- Press Releases // -->        
+      </div>
+    </div>
+      <!-- Profile Body // -->
+    </div>
+@endsection
+@section('scripts')   
+@endsection
